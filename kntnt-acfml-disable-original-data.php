@@ -5,7 +5,7 @@
  * Plugin Name:       Kntnt Disabler of Original Data for Advanced Custom Fields Multilingual
  * Plugin URI:        https://www.kntnt.com/
  * Description:       Disables the "Field's value in original language" message under ACF fields that are translated with WPML.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Thomas Barregren
  * Author URI:        https://www.kntnt.com/
  * License:           GPL-3.0+
@@ -14,4 +14,6 @@
 
 defined( 'ABSPATH' ) || die;
 
-add_filter( 'wpml_custom_field_original_data', __return_null(), 11);
+add_filter( 'wpml_custom_field_original_data', function ( $acf_original_value ) {
+	return null;
+}, 11, 1 );
